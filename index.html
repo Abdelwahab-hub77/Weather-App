@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <!--  ===== description ===== -->
+    <meta name="description"
+        content="Get accurate, real-time weather updates and forecasts at your fingertips. Plan your day with confidence, no matter the weather!">
+    <!-- ===== icon ===== -->
+    <link rel="shortcut icon" href="img/imgi_1_logo.png" type="image/x-icon">
+    <!-- ===== Font Awesome Icon Library ===== -->
+    <link rel="stylesheet" href="Css/all.min.css">
+    <!-- ===== bootstrap ===== -->
+    <link rel="stylesheet" href="Css/bootstrap.min.css">
+    <!-- ===== Style sheet ===== -->
+    <link rel="stylesheet" href="Css/style.css">
+
+   
+</head>
+
+<body>
+
+    <!-- ====================== Navbar ===================== -->
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="d-flex text-decoration-none" href="#">
+                    <img src="./img/imgi_1_logo.png" alt="Weather Logo" class="logo-img me-2">
+                    <div>
+                        <h6 class="logo-text">WeatherCast</h6>
+                        <p class="tagline">Your daily forecast</p>
+                    </div>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Live Cameras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Photos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ====================== Search Section ===================== -->
+        <section>
+            <div class="container-fluid search-section">
+                <!-- Weather Animation -->
+                <div class="sky">
+                    <div class="cloud c1"></div>
+                    <div class="cloud c2"></div>
+                    <div class="cloud c3"></div>
+                    <div class="cloud c4"></div>
+                    <div class="cloud c5"></div>
+                    <div class="cloud c6"></div>
+                    <div class="cloud c7"></div>
+                    <div class="cloud c8"></div>
+                </div>
+
+                <div class="search-content-wrapper">
+                    <h1 class="search-heading">Global Weather Forecast</h1>
+                    <p class="search-subheading">Get accurate real-time weather updates for any location worldwide</p>
+                    
+                    <div class="container search-container">
+                        <input type="text" class="form-control search-input" id="searchLocationInput"
+                            placeholder="Search for a location..." autocomplete="off">
+                        <button class="btn btn-primary search-button">
+                            <i class="fas fa-search"></i> Find
+                        </button>
+                    </div>
+                    <div id="errorMassage" class="container d-none text-center fw-bold mt-3">
+                        <!-- error message will be displayed here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================== Weather Cards ===================== -->
+        <section>
+            <div class="container weather-card-group">
+                <div class="row" id="weatherCardsRow">
+                    <div class="col-lg-4 mb-4">
+                        <div class="weather-card current">
+                            <div class="weather-card-header">
+                                <span id="currentDay">Tuesday</span>
+                                <span id="currentDate">1 July</span>
+                            </div>
+                            <div class="weather-card-body">
+                                <h5 id="currentLocation">Cairo, Egypt</h5>
+                                <h2>
+                                    <span id="currentTemp">29</span><sup>o</sup>C 
+                                    <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="Weather Icon" id="currentWeatherIcon">
+                                </h2>
+                                <span class="condition" id="currentCondition">Clear Sky</span>
+
+                                <div class="weather-details">
+                                    <span><i class="fas fa-wind"></i> <span id="currentWindSpeed">18</span> km/h</span>
+                                    <span><i class="fas fa-compass"></i> <span id="currentWindDirection">East</span></span>
+                                    <span><i class="fas fa-tint"></i> <span id="currentHumidity">20</span>%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mb-4">
+                        <div class="weather-card next-day">
+                            <div class="weather-card-header text-center">
+                                <span id="nextDay1">Wednesday</span>
+                            </div>
+                            <div class="weather-card-body">
+                                <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="Weather Icon" id="nextDay1WeatherIcon">
+                                <div class="temp-max"><span id="nextDay1MaxTemp">32</span><sup>o</sup>C</div>
+                                <div class="temp-min"><span id="nextDay1MinTemp">25</span><sup>o</sup>C</div>
+                                <span class="condition" id="nextDay1Condition">Partly Cloudy</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mb-4">
+                        <div class="weather-card next-day">
+                            <div class="weather-card-header text-center">
+                                <span id="nextDay2">Thursday</span>
+                            </div>
+                            <div class="weather-card-body">
+                                <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="Weather Icon" id="nextDay2WeatherIcon">
+                                <div class="temp-max"><span id="nextDay2MaxTemp">30</span><sup>o</sup>C</div>
+                                <div class="temp-min"><span id="nextDay2MinTemp">23</span><sup>o</sup>C</div>
+                                <span class="condition" id="nextDay2Condition">Sunny</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ====================== Footer ===================== -->
+    <footer>
+        <div class="footer-container">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <div class="subscribe-container">
+                            <input type="email" class="form-control subscribe-input" id="subscribeEmail"
+                                placeholder="Enter your email to subscribe...">
+                            <button class="btn btn-primary subscribe-button">
+                                <i class="fas fa-paper-plane"></i> Subscribe
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="social-icons-wrapper">
+                            <a href="#" class="icons" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="icons" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="icons" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="icons" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <p class="footer-text">Copyright 2025 Designed by Abdelwahab Ahmed. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
